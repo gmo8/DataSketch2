@@ -28,7 +28,7 @@ function draw(){
     background(bg);
     image(logo, 10, 10, 300, 300);
 
-    for (var i = 0; i < species.length; i++) {
+    for (var i = 9; i < species.length; i++) {
         species[i].display();
         species[i].rollover(mouseX, mouseY);
       }

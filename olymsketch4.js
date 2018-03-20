@@ -9,7 +9,7 @@ var images = [];
 
 function preload(){
     table = loadTable("data/Workbook2.csv", "header");
-   for(var i=13; i <= 16; i++){
+   for(var i=13; i < 16; i++){
      images[i] = loadImage('photos/' + i + '.jpg');
      logo = loadImage('photos/olymlogo.jpg');
     }
@@ -27,7 +27,7 @@ function draw(){
 
     background(bg);
     image(logo, 5, 2, 300, 300);
-    for (var i = 0; i < species.length; i++) {
+    for (var i = 13; i < species.length; i++) {
         species[i].display();
         species[i].rollover(mouseX, mouseY);
       }
@@ -41,7 +41,7 @@ function loadData(){
         var row = table.getRow(i);
         var animal = row.get("species");
         var fact = row.get("pop");
-        species[i] = new Species(images[i], random(50,900), random(50,900), 200, fact);
+        species[i] = new Species(images[i], random(50,600), random(50,600), 200, fact);
   }
 }
 

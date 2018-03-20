@@ -6,12 +6,12 @@ var logo;
 
 var species;
 
-var photo = [];
+var images = [];
 
 function preload(){
-    table = loadTable("data/Workbook2.csv", "header");
-    for(var i = 1; i < 4; i++){
-     photo[i] = loadImage('photos/' + i + '.jpg');
+    table = loadTable("data/Workbook3.csv", "header");
+    for(var i=1; i < 4; i++){
+     images[i] = loadImage('photos/' + i + '.jpg');
      logo = loadImage('photos/bendlogo.jpg');
     }
 }
@@ -41,8 +41,8 @@ function loadData(){
 
     for (var i = 1; i < table.getRowCount(); i++) {
         var row = table.getRow(i);
-        var animal = row.get("species");
-        var fact = row.get("status");
+        var animal = row.get("Species");
+        var fact = row.get("Fact");
         species[i] = new Species(images[i], random(50,900), random(50,900), 200, fact);
   }
 }
