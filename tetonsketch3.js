@@ -8,18 +8,19 @@ var images = [];
 var logo;
 
 function preload(){
-    table = loadTable("data/Workbook2.csv", "header");
-   for(var i=9; i < 12; i++){
-     images[i] = loadImage('images/' + i + '.jpg');
-     logo = loadImage('photos/tetonlogo.jpg');
-    }
+  table = loadTable("data/Workbook3.csv", "header");
+  bg = loadImage("photos/teton.jpg");
+  logo = loadImage('photos/tetonlogo.jpg');
+  for(var i=9; i < 13; i++){
+   images[i] = loadImage('photos/' + i + '.jpg');
+  }
+
 }
 
 
 var table;
 function setup(){
   createCanvas(windowWidth,windowHeight);
-    bg = loadImage("photos/teton.jpg");
     loadData();
 }
 
@@ -38,7 +39,7 @@ function loadData(){
 
     species = [];
 
-    for (var i = 0; i < table.getRowCount(); i++) {
+    for (var i = 9; i < table.getRowCount(); i++) {
         var row = table.getRow(i);
         var animal = row.get("species");
         var fact = row.get("pop");

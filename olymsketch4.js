@@ -8,10 +8,11 @@ var species;
 var images = [];
 
 function preload(){
-    table = loadTable("data/Workbook2.csv", "header");
+    table = loadTable("data/Workbook3.csv", "header");
+    bg = loadImage("photos/olym.jpg");
+    logo = loadImage('photos/olymlogo.jpg');
    for(var i=13; i < 16; i++){
      images[i] = loadImage('photos/' + i + '.jpg');
-     logo = loadImage('photos/olymlogo.jpg');
     }
 }
 
@@ -19,7 +20,6 @@ function preload(){
 var table;
 function setup(){
   createCanvas(windowWidth,windowHeight);
-    bg = loadImage("photos/olym.jpg");
     loadData();
 }
 
@@ -37,7 +37,7 @@ function loadData(){
 
     species = [];
 
-    for (var i = 0; i < table.getRowCount(); i++) {
+    for (var i = 13; i < table.getRowCount(); i++) {
         var row = table.getRow(i);
         var animal = row.get("species");
         var fact = row.get("pop");

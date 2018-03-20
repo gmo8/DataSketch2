@@ -10,10 +10,11 @@ var images = [];
 
 
 function preload(){
-  table = loadTable("data/Workbook2.csv", "header");
+  table = loadTable("data/Workbook3.csv", "header");
+  bg = loadImage("photos/smokies.jpg");
+  logo = loadImage('photos/smokylogo.jpg');
   for(var i = 5; i < 8; i++){
    images[i] = loadImage('photos/' + i + '.jpg');
-   logo = loadImage('photos/smokylogo.jpg');
   }
 }
 
@@ -21,7 +22,6 @@ function preload(){
 var table;
 function setup(){
   createCanvas(windowWidth,windowHeight);
-  bg = loadImage("photos/smokies.jpg");
     loadData();
   
 }

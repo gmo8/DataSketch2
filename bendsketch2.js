@@ -1,5 +1,4 @@
 
-
 var bg;
 
 var logo;
@@ -8,19 +7,13 @@ var species;
 
 var images = [];
 
-function preload(){
-    table = loadTable("data/Workbook3.csv", "header");
-    for(var i=1; i < 4; i++){
-     images[i] = loadImage('photos/' + i + '.jpg');
-     logo = loadImage('photos/bendlogo.jpg');
-    }
-}
-
-
 var table;
+
+logo = loadImage('photos/smokylogo.jpg');
+
+
 function setup(){
   createCanvas(windowWidth,windowHeight);
-    bg = loadImage("photos/bend.jpg");
     loadData();
 }
 
@@ -43,11 +36,11 @@ function loadData(){
         var row = table.getRow(i);
         var animal = row.get("Species");
         var fact = row.get("Fact");
-        species[i] = new Species(images[i], random(50,900), random(50,900), 200, fact);
+        species[i] = new Spec(images[i], random(50,900), random(50,900), 200, fact);
   }
 }
 
-class Species {
+class Spec {
     constructor(photo, x, y, diameter, s) {
       this.x = Number(x);
       this.y = Number(y);
