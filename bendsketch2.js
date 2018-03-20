@@ -9,7 +9,15 @@ var images = [];
 
 var table;
 
-logo = loadImage('photos/smokylogo.jpg');
+function preload(){
+     table = loadTable("data/Workbook3.csv", "header");
+     bg = loadImage("photos/bend.jpg");
+     logo = loadImage('photos/bendlogo.jpg');
+     for(var i=1; i < 5; i++){
+      images[i] = loadImage('photos/' + i + '.jpg');
+     }
+  
+}
 
 
 function setup(){
