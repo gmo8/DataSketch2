@@ -40,10 +40,10 @@ function loadData(){
 
     species = [];
 
-    for (var i = 1; i < table.getRowCount(); i++) {
+    for (var i = 0; i < table.getRowCount(); i++) {
         var row = table.getRow(i);
-        var animal = row.get("Species");
-        var fact = row.get("Fact");
+        var animal = row.get("species");
+        var fact = row.get("pop");
         species[i] = new Spec(images[i], random(50,900), random(50,900), 200, fact);
   }
 }
